@@ -32,7 +32,7 @@
 
 <h2>Denoising/utils.py</h2>
 <ul>
-<li>Updated to contain image normalization done prior to PSNR and SSIM calculation. Changes are as described in Image Quality Metrics.
+<li>Updated to contain image normalization performed prior to PSNR and SSIM calculation. Changes are as described in Image Quality Metrics.
 </li>
 </ul>
 
