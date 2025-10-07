@@ -31,6 +31,12 @@
 <li>Paired images are preprocessed using CSBdeep helpers (sample_patches_from_multiple_stacks, no_background_patches and norm_percentiles) and prexisiting normalization is removed </li>
 </ul>
 
+<h2>Denoising/utils.py</h2>
+<ul>
+<li>Changed utils to contain image normalization done prior to PSNR and SSIM calculation. Changes are as referenced in Image Quality Metrics Section following(Supplementary Notes, Section 2.2 of Weigert et al. (2018).)
+</li>
+</ul>
+
 <h1>How to run training and testing on our dataset</h1>
 <ul>
     <li>Update path to raw and gt directories in /Denoising/Options/RealDenoising_Restormer.yml for train and val set</li>
@@ -40,6 +46,4 @@
 </ul>
 
 
-<h2>Denoising/utils.py</h2>
-<ul>
-<li>Changed utils to contain image normalization done prior to PSNR and SSIM calculation. Changes are as referenced in Image Quality Metrics Section following(Supplementary Notes, Section 2.2 of Weigert et al. (2018).  )
+
