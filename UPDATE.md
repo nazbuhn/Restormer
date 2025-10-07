@@ -1,13 +1,13 @@
 # Updated code implementation for Comparison of deep learning approaches for extreme low-SNR image restoration implementation 
 
-<h2>How to run training and testing on our dataset</h2>
+<h2>How to run training and testing on our dataset:</h2>
     <ul>
         <li>Update the training and val directory paths in /Denoising/Options/RealDenoising_Restormer.yml.</li>
         <li>Run: python3 -m train -opt /code/nbuhn/nbuhn/Restormer/Denoising/Options/RealDenoising_Restormer.yml.            </li>
         <li>After training, cd into the Denoising folder and run: python3 -m test_restormer including --path, --             dataset, and --weights.</li>  
     </ul>
 
-<h2>Changes by file from original forked implementation</h2>
+<h2>Changes by file from the original forked implementation:</h2>
 <h3>Denoising/Options/RealDenoising_Restormer.yml</h3>
     <ul>    
         <li>num_gpu set to 1.</li>
