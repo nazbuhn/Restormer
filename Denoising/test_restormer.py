@@ -67,16 +67,6 @@ def generate_patches2(X, Y, patch_size):
         X_batch.append(_X)
         Y_batch.append(_Y)
         yield np.concatenate(X_batch)[...,None],np.concatenate(Y_batch)[...,None]
-
-# def load_dataset(condition):
-#     image_list = []
-#     path = os.path.join(args.path,args.dataset,condition,'*.tif')
-#     paths = sorted(glob.glob(path))
-#     paths = paths[len(paths)*9//10:]
-#     for im_path in paths:
-#         im = imageio.imread(im_path).astype('float32')/65535
-#         image_list.append(im)
-#     return image_list
 def load_dataset():
     raw_image_list = []
     gt_image_list = []
@@ -89,32 +79,23 @@ def load_dataset():
     pathlq = paths_lq[len(paths_lq)*9//10:]
     print('pathlq', pathlq)
     for im_path in range(len(pathgt)):
-        # print('im_path', pathgt[im_path])
         img_gt = imageio.imread(pathgt[im_path]).astype('float32')
-        # print('img_gt.shape1', img_gt.shape)
         img_lq = imageio.imread(pathlq[im_path]).astype('float32')
         gen = generate_patches2(img_lq, img_gt, (512,512))
         img_lq, img_gt = next(gen)
-        # print('img_gt.shape2', img_gt.shape)
         img_lq = img_lq.squeeze(axis=0)
         img_gt = img_gt.squeeze(axis=0)
         img_lq = img_lq.squeeze(axis=-1)
         img_gt = img_gt.squeeze(axis=-1)
-        # print('img_gt.shape3', img_gt.shape)
         raw_image_list.append(img_lq)
         gt_image_list.append(img_gt)
     return raw_image_list, gt_image_list
 
-# test_images = load_dataset('raw')
-# gt_images = load_dataset('gt')
 test_images, gt_images = load_dataset()
 test_indices = range(len(test_images))
-# print('test_images', test_images)
 
 print('%d test images'%len(test_images))
 print('%d gt images'%len(gt_images))
-
-# print('test image shape:',test_images[0].shape)
 
 os.makedirs('results/restormer.%s'%args.dataset,exist_ok=True)
 os.makedirs('results/restormer.gt',exist_ok=True)
