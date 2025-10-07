@@ -12,15 +12,15 @@
 <ul>
 <li>Updated to take .tif files.</li>
 <li>Splits files into training, validation, and test sets.</li>
-<li>Removed patching and overlap logic because we used 512 x 512 nonoverlapping crops.</li>
+<li>Removed patching and overlap logic because we use 512 x 512 non-overlapping crops.</li>
 </ul>
 
 <h2>Denoising/test_restormer.py</h2>
 <h3>Updated the testing logic and added PSNR and SSIM evaluation to the testing script.</h3>
 <ul>
-<li>Updated testing script to take dataset path, name, and weights.</li>
+<li>Updated the testing script to take dataset path, name, and weights.</li>
 <li>Modified testing to use .tif files instead of .mat.</li>
-<li>Paired images are preprocessed using CSBdeep helpers (sample_patches_from_multiple_stacks, no_background_patches, and norm_percentiles).</li>
+<li>Paired images are preprocessed using CSBDeep helpers (sample_patches_from_multiple_stacks, no_background_patches, and norm_percentiles).</li>
 <li> Images are normalized and PSNR and SSIM are calculated using skimage's implementation.</li>
 </ul>
 
@@ -32,7 +32,7 @@
 
 <h2>Denoising/utils.py</h2>
 <ul>
-<li>Updated to contain image normalization done prior to PSNR and SSIM calculation. Changes are as referenced in Image Quality Metrics Section (Supplementary Notes, Section 2.2 of Weigert et al. (2018).)
+<li>Updated to contain image normalization done prior to PSNR and SSIM calculation. Changes are as described in Image Quality Metrics.
 </li>
 </ul>
 
@@ -40,7 +40,7 @@
 <ul>
     <li>Update the training and val directory paths in /Denoising/Options/RealDenoising_Restormer.yml.</li>
     <li>Run: python3 -m train -opt /code/nbuhn/nbuhn/Restormer/Denoising/Options/RealDenoising_Restormer.yml. </li>
-    <li>After training, cd into Denoising folder and run: python3 -m test_restormer including --path, --dataset, and --weights.</li>
+    <li>After training, cd into the Denoising folder and run: python3 -m test_restormer including --path, --dataset, and --weights.</li>
     
 </ul>
 
