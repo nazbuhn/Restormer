@@ -2,6 +2,7 @@
 
 <h2>How to run training and testing on our dataset:</h2>
     <ul>
+        <li>Crop each dataset using hilo512_crop.py or hilo512_crop.py or overlapping_crop.py for adaptive image stitching. </li> 
         <li>Update the training and val directory paths in /Denoising/Options/RealDenoising_Restormer.yml.</li>
         <li>Run: python3 -m train -opt /code/nbuhn/nbuhn/Restormer/Denoising/Options/RealDenoising_Restormer.yml.            </li>
         <li>After training, cd into the Denoising folder and run: python3 -m test_restormer including --path, --             dataset, and --weights.</li>  
