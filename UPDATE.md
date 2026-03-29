@@ -28,7 +28,7 @@
     <ul>
         <li>Updated the testing script to take dataset path, name, and weights.</li>
         <li>Modified testing to use .tif files instead of .mat.</li>
-        <li>Paired images are preprocessed using CSBDeep helpers (sample_patches_from_multiple_stacks,                       no_background_patches, and norm_percentiles).</li>
+        <li>Paired images are preprocessed using CSBDeep helpers (sample_patches_from_multiple_stacks,                        and norm_percentiles).</li>
         <li> Images are normalized and PSNR and SSIM are calculated using skimage's implementation.</li>
     </ul>
 
